@@ -6,6 +6,7 @@ country = input("enter country: ")
 language = input("select language ru/en: ")
 settings = dict(q = country, type = 'like', units = 'metric', lang = language, APPID = api_token)
 res = requests.get(url, params = settings)
+
 if language == "ru":
     data = res.json()
     print("Небо:", data['weather'][0]['description'])
